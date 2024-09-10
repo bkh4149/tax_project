@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>所得税計算</title>
+</head>
+<body>
+    <h1>所得税計算</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="income">所得:</label>
+        <input type="text" id="income" name="income" required>
+        <button type="submit">計算</button>
+    </form>
+    {% if tax %}
+        <h2>計算結果: ¥{{ tax }}</h2>
+    {% endif %}
+</body>
+</html>
